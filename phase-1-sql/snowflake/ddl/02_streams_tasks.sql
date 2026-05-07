@@ -54,7 +54,7 @@ ALTER TASK auto_bill_task RESUME;
 SHOW STREAMS   IN SCHEMA core;
 SHOW TASKS     IN SCHEMA core;
 
-SELECT name, state, schedule 
+SELECT name, state, scheduled_time 
 FROM TABLE(INFORMATION_SCHEMA.TASK_HISTORY())
 WHERE name = 'AUTO_BILL_TASK'
 ORDER BY scheduled_time DESC 
